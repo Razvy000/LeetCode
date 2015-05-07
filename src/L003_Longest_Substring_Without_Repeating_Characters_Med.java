@@ -8,7 +8,7 @@ import java.util.Map;
  For "bbbbb" the longest substring is "b", with the length of 1.
 
  */
-public class L003_Longest_Substring_Without_Repeating_Characters {
+public class L003_Longest_Substring_Without_Repeating_Characters_Med {
 
     // idea: store occurence position
     // limit len when occurence found
