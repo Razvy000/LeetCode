@@ -6,7 +6,7 @@ Add the two numbers and return it as a linked list.
  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  Output: 7 -> 0 -> 8
  */
-public class L002_Add_Two_Numbers {
+public class L002_Add_Two_Numbers_Med {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
