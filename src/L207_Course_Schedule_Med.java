@@ -28,6 +28,7 @@ public class L207_Course_Schedule_Med {
     boolean[] visited;
     List<Integer>[] adjList;
     boolean[] flag;
+    List<Integer> topologicalSorted = new ArrayList<Integer>();
 
     // idea: check if a cycle exists in the graph
     // dfs returns if found cycle
@@ -54,6 +55,7 @@ public class L207_Course_Schedule_Med {
                 }
             }
         }
+        
         return true;
     }
 
@@ -77,10 +79,27 @@ public class L207_Course_Schedule_Med {
         }
 
         visited[root] = false;
-
+        // might be many correct topological sorts
+        topologicalSorted.add(0, root); 
         return false;
     }
 
+    /*
+    L ← Empty list that will contain the sorted nodes
+while there are unmarked nodes do
+    select an unmarked node n
+    visit(n) 
+function visit(node n)
+    if n has a temporary mark then stop (not a DAG)
+    if n is not marked (i.e. has not been visited yet) then
+        mark n temporarily
+        for each node m with an edge from n to m do
+            visit(m)
+        mark n permanently
+        unmark n temporarily
+        add n to head of L
+    */
+    
     public static void main(String[] args) {
         L207_Course_Schedule_Med o = new L207_Course_Schedule_Med();
         int numCourses = 2000;
