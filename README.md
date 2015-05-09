@@ -1,5 +1,5 @@
 # LeetCode
-My leetcode solutions in Java:
+My LeetCode solutions in Java:
 
 dynamic programming, list, two pointers, both ends, dfs
 
