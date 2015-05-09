@@ -14,6 +14,8 @@ dynamic programming, list, two pointers, both ends, dfs
   * [Factorial Trailing Zeroes] (src/L172_Factorial_Trailing_Zeroes_Ezy.java)
   * [Reverse Linked List] (src/L206_Reverse_Linked_List_Ezy.java)
 
+* Binary Search
+  * [Search Insert Position] (src/L035_Search_Insert_Position_Med.java)
 
 * List
   * [Remove Nth from end] (src/L019_Remove_Nth_Node_From_End_of_List_Ezy.java)
