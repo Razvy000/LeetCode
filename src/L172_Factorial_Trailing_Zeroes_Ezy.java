@@ -3,7 +3,7 @@
 
  Note: Your solution should be in logarithmic time complexity.
  */
-
+ 
 public class L172_Factorial_Trailing_Zeroes_Ezy {
 
     // idea: number of 5*2 pair, number of 5 multiples
@@ -16,6 +16,7 @@ public class L172_Factorial_Trailing_Zeroes_Ezy {
             n /= 5;
             count += n;
         }
+        
         return count;
     }
 
