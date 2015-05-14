@@ -9,6 +9,7 @@ public class ListNode {
         val = x;
     }
 
+    // not safe
     @Override
     public String toString() {
         if(next==null)
