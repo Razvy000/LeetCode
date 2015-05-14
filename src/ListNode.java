@@ -8,4 +8,14 @@ public class ListNode {
     public ListNode(int x) {
         val = x;
     }
+
+    @Override
+    public String toString() {
+        if(next==null)
+            return ""+ val;
+        else
+            return "" + val + " " + next.toString();
+    }
+    
+    
 }
