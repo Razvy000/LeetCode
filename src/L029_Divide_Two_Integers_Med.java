@@ -1,11 +1,16 @@
 
+/*
+ Divide two integers without using multiplication, division and mod operator.
+
+ If it is overflow, return MAX_INT.
+ */
+
 public class L029_Divide_Two_Integers_Med {
 
     // idea: only positives
     // then fix input sign
     // idea: binary search, divide and conquer
     // idea: compute answer as a sum of powers of 2
-    
     public int divide2(int dividend, int divisor) {
 
         // base case
@@ -25,13 +30,13 @@ public class L029_Divide_Two_Integers_Med {
     }
 
     int divide(int dividend, int divisor) {
-        
+
         // junk for overflow
         if (divisor == 1)
             return dividend;
         if (dividend == Integer.MIN_VALUE && Math.abs(divisor) == 1)
             return Integer.MAX_VALUE;
-        
+
         int sign = (dividend > 0 ^ divisor > 0) ? -1 : 1;
 
         // compute r as a sum of powers of two
@@ -40,23 +45,23 @@ public class L029_Divide_Two_Integers_Med {
         long sor = Math.abs((long) divisor);
 
         while (end >= sor) {
-            
+
             // get power of two
             long power = 1;
-            long tempsor = sor;           
-            
+            long tempsor = sor;
+
             while ((tempsor << 1) < end) {
                 power <<= 1;
                 tempsor <<= 1;
             }
-            
+
             // add to r
             r += power;
-            
+
             // update dividend
             end -= tempsor;
         }
-        
+
         return (int) (sign * r);
     }
 
