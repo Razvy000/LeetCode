@@ -21,11 +21,10 @@ public class L030_Substring_with_Concatenation_of_All_Words_Hrd {
     public List<Integer> findSubstring(String s, String[] W) {
 
         List<Integer> r = new ArrayList<>();
-        
-        
-        if(W.length==0 || W[0].isEmpty() || W[0].length() > s.length() )
+
+        if (W.length == 0 || W[0].isEmpty() || W[0].length() > s.length())
             return r;
-        
+
         int m = W[0].length();
         Map<String, Integer> hist = new HashMap<>();
 
@@ -33,37 +32,57 @@ public class L030_Substring_with_Concatenation_of_All_Words_Hrd {
         for (String w : W)
             hist.put(w, hist.containsKey(w) ? hist.get(w) + 1 : 1);
 
+        Map<String, Integer> currHist = new HashMap<>();
         // travel s
         for (int i = 0; i + m * W.length <= s.length(); i++) {
 
             if (hist.containsKey(s.substring(i, i + m))) {
 
-                // create a new histogram;
-                Map<String, Integer> currHist = new HashMap<>();
-                
+                // create a new histogram
+                currHist.clear();
+
                 // travel W
                 for (int j = 0; j < W.length; j++) {
 
                     String currw = s.substring(i + j * m, i + j * m + m);
-                    if (hist.containsKey(currw)) {
-                        currHist.put(currw, currHist.containsKey(currw)?currHist.get(currw)+1:1);
-                    }else{
+                    Integer histC = hist.get(currw);
+                    Integer currHistC = currHist.get(currw);
+                    if (histC == null)
                         break;
-                    }
+                    else if (currHistC == null)
+                        currHist.put(currw, 1);
+                    else if (currHistC > histC)
+                        break;
+                    else
+                        currHist.put(currw, currHistC + 1);
                 }
-                
+
                 // compare hashcodes? or entries
-                if(hist.equals(currHist))
+                if (hist.equals(currHist))
                     r.add(i);
             }
         }
-        
+
         return r;
     }
 
     public static void main(String[] args) {
         L030_Substring_with_Concatenation_of_All_Words_Hrd o = new L030_Substring_with_Concatenation_of_All_Words_Hrd();
-        //"barfoothefoobarman", ["foo","bar"]
+
         System.out.println(o.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"}));
+        StringBuffer a = new StringBuffer();
+        for (int i = 0; i < 5000; i++) {
+            a.append("ab");
+        }
+        String[] b = new String[200];
+        for (int i = 0; i < 200; i += 2) {
+            b[i] = "ab";
+            b[i + 1] = "ba";
+        }
+        long t1 = System.currentTimeMillis();
+        List<Integer> r = o.findSubstring(a.toString(), b);
+        long t2 = System.currentTimeMillis();
+        System.out.println(r);
+        System.out.println(t2 - t1);
     }
 }
