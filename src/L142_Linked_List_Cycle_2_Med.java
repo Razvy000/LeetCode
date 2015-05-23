@@ -9,7 +9,7 @@ public class L142_Linked_List_Cycle_2_Med {
 
     // idea: after the first meet point
     // run runner1 each step and start a new runner from begining
-    // when they meat it is the begining of cycle
+    // when they meet it is the begining of cycle
     
     public ListNode detectCycle(ListNode head) {
 
