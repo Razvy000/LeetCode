@@ -7,6 +7,10 @@ Can you solve it without using extra space?
 
 public class L142_Linked_List_Cycle_2_Med {
 
+    // idea: after the first meet point
+    // run runner1 each step and start a new runner from begining
+    // when they meat it is the begining of cycle
+    
     public ListNode detectCycle(ListNode head) {
 
         ListNode runner1 = head;    // 1 step per turn
