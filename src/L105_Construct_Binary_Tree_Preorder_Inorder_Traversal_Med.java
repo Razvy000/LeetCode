@@ -8,7 +8,8 @@ You may assume that duplicates do not exist in the tree.
 public class L105_Construct_Binary_Tree_Preorder_Inorder_Traversal_Med {
 
     // idea: exemplify
-    // (6) is root
+    // (6) is root and it is first in preorder
+    // then left and right are given by inorder
  /*
       6
    3    8
