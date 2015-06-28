@@ -16,6 +16,8 @@ return [1,2,3].
 
 Note: Recursive solution is trivial, could you do it iteratively?
 */
+
+// problems L094, L144, L145 have traversals
 public class L144_Binary_Tree_Preorder_Traversal_Med {
 
     public List<Integer> preorderTraversal(TreeNode root) {
