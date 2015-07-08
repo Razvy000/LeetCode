@@ -1,3 +1,8 @@
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 /*
 Given a list of non negative integers, arrange them such that they form the largest number.
 
@@ -9,12 +14,10 @@ Note: The result may be very large, so you need to return a string instead of an
 
 public class L179_Largest_Number_Med {
     
-    Comparator<String> cmpLexiPadd = new Comparator<String>(){
-        public int compare(String a, String b){
-            String s1 = a+b;
-            String s2 = b+a;
-            return s1.compareTo(s2);
-        }
+    Comparator<String> cmpLexiPadd = (String a, String b) -> {
+        String s1 = a+b;
+        String s2 = b+a;
+        return s1.compareTo(s2);
     };
   
   // idea: sort them lexicografically (fun if u combine both ways) and combine
