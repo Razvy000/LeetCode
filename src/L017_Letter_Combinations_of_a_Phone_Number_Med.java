@@ -37,12 +37,14 @@ public class L017_Letter_Combinations_of_a_Phone_Number_Med {
     }
 
     void dfs(String digits, String sofar) {
-        //System.out.println("|"+digits + "|" + sofar+"|");
+        
+        // base
         if (digits.length() == 0) {
             r.add(sofar);
             return;
         }
         
+        // recurse
         int idx = digits.charAt(0) - '0';
         char[] maps = map[idx];
         for (int i = 0; i < maps.length; i++) {
