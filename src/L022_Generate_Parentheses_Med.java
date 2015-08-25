@@ -37,7 +37,7 @@ public class L022_Generate_Parentheses_Med {
     // DP idea: generate from existing using 2 parts
     // 0 empty
     // 1 ()
-    // 2 ()(), (())  
+    // 2 ()(), (())  = (empty-0)+()-1, (()-1) +empty-0
     // 3 ()()(), ()(()),(())(),(()()),((())) 
     public static List<String> generateParenthesis(int n) {
         List<String>[] result = new List[n + 1];
