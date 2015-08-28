@@ -27,8 +27,7 @@ public class L077_Combinations_Med {
     // [] 1 2 [1 2] 3 [1 3] [1 2 3]
     public List<List<Integer>> combine(int n, int k) {
 
-        List<List<Integer>> r = new ArrayList<>();
-        List<List<Integer>> r2 = new ArrayList<>();
+        List<List<Integer>> r = new ArrayList<>();        
         List<Integer> empty = new ArrayList<>();
         r.add(empty);
 
@@ -44,6 +43,7 @@ public class L077_Combinations_Med {
             }
         }
 
+        List<List<Integer>> r2 = new ArrayList<>();
         for (List<Integer> e : r)
             if (e.size() == k)
                 r2.add(e);
