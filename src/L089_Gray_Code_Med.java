@@ -44,6 +44,7 @@ public class L089_Gray_Code_Med {
             int size = r.size();
 
             //for(int j=0; j<size; j++){
+            // get them in reverse order so they reflect the staircasing property
             for (int j = size - 1; j >= 0; j--) {
                 int graycode = r.get(j) + pow;
                 r.add(graycode);
