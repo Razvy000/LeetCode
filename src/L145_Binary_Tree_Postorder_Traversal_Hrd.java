@@ -21,6 +21,9 @@ Note: Recursive solution is trivial, could you do it iteratively?
 // problems L094, L144, L145 have traversals
 public class L145_Binary_Tree_Postorder_Traversal_Hrd {
 
+    
+    // idea: do a pre-order traversal and reverse the result
+    
     public List<Integer> postorderTraversal(TreeNode root) {
 
         List<Integer> res = new ArrayList<Integer>();
