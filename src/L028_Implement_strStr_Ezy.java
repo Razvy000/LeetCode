@@ -9,7 +9,7 @@ public class L028_Implement_strStr_Ezy {
 
     // idea: brute force not that bad for random strings
     // 1/26 chance to match 1 letter
-    // 1/(26*26) to mach w letters
+    // 1/(26*26) to mach 2 letters
     
     // idea: Knuth-Morris-Pratt algo
     public int strStr(String haystack, String needle) {
