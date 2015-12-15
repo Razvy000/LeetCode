@@ -11,21 +11,17 @@
 public class L283_Move_Zeroes_Ezy {
 
     // idea: 2 pointers
+    // use left, or i - nzeros
     public void moveZeroes(int[] nums) {
-
-        int left = 0;
         int nz = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                nums[left] = nums[i];
-                left++;
-            } else {
+        for(int i=0; i< nums.length; i++){
+            if(nums[i]!=0){
+                nums[i - nz] = nums[i];
+                if(nz > 0)
+                    nums[i] = 0;
+            }else{
                 nz++;
             }
-        }
-
-        for (int i = nums.length - nz; i < nums.length; i++) {
-            nums[i] = 0;
         }
     }
 }
